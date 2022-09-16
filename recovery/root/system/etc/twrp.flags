@@ -9,9 +9,26 @@
 /recovery       emmc    /dev/block/bootdevice/by-name/recovery         flags=backup=1;display="Recovery";flashimg=1
 /dtbo           emmc    /dev/block/bootdevice/by-name/dtbo             flags=backup=1;display="Dtbo";flashimg=1
 /cache          ext4    /dev/block/bootdevice/by-name/cache            flags=backup=1;display="Cache";wipeingui
-
 /metadata       ext4    /dev/block/bootdevice/by-name/metadata         flags=display="Metadata";wrappedkey
 /data           f2fs    /dev/block/bootdevice/by-name/userdata         flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
+
+# System
+/system 			ext4	/dev/block/bootdevice/by-name/system		flags=slotselect;display="System";backup=1;wipeingui
+/system_image	        	emmc	/dev/block/bootdevice/by-name/system		flags=slotselect;flashimg=1
+/vendor				ext4	/dev/block/bootdevice/by-name/vendor		flags=slotselect;display="Vendor";backup=1;wipeingui
+/vendor_image		        emmc	/dev/block/bootdevice/by-name/vendor		flags=slotselect;flashimg=1
+/product			ext4	/dev/block/bootdevice/by-name/product		flags=slotselect;display="Product";backup=1
+/product_image		        emmc	/dev/block/bootdevice/by-name/product		flags=slotselect;flashimg=1
+/odm                            ext4    /dev/block/bootdevice/by-name/odm               display="ODM";logical
+/odm_image                	emmc	/dev/block/bootdevice/by-name/odm       	flags=display="ODM";flashimg;backup=1
+/system_ext                     ext4    /dev/block/bootdevice/by-name/system_ext        logical
+/system_ext_image		emmc	/dev/block/bootdevice/by-name/system_ext	flags=slotselect;flashimg=1
+
+/system                         erofs   /dev/block/bootdevice/by-name/system            display="system";logical
+/vendor                         erofs   /dev/block/bootdevice/by-name/vendor            display="Vendor";logical
+/product                        erofs   /dev/block/bootdevice/by-name/product           display="Product";logical
+/odm                            erofs   /dev/block/bootdevice/by-name/odm               display="ODM";logical
+/system_ext                     erofs   /dev/block/bootdevice/by-name/system_ext        display="system_ext";logical
 
 # AVB partitions
 /dtbo           emmc    /dev/block/bootdevice/by-name/dtbo             flags=display="Dtbo";flashimg;backup=1
@@ -36,3 +53,21 @@
 
 # Removable storage
 /usb_otg        auto    /dev/block/sdg1       /dev/block/sdg           flags=display="USB-Storage";storage;wipeingui;removable;fsflags="utf8"
+
+/my_bigball          emmc    /dev/block/bootdevice/by-name/my_bigball             flags=display="my_bigball";flashimg;backup=1
+/my_carrier           emmc    /dev/block/bootdevice/by-name/my_carrier             flags=display="my_carrier";flashimg;backup=1
+/my_company           emmc    /dev/block/bootdevice/by-name/my_company             flags=display="my_company";flashimg;backup=1
+/my_custom           emmc    /dev/block/bootdevice/by-name/my_custom             flags=display="my_custom";flashimg;backup=1
+/my_engineering           emmc    /dev/block/bootdevice/by-name/my_engineering             flags=display="my_engineering";flashimg;backup=1
+/my_heytap           emmc    /dev/block/bootdevice/by-name/my_heytap             flags=display="my_heytap";flashimg;backup=1
+/my_manifest           emmc    /dev/block/bootdevice/by-name/my_manifest             flags=display="my_manifest";flashimg;backup=1
+/my_preload           emmc    /dev/block/bootdevice/by-name/my_preload             flags=display="my_preload";flashimg;backup=1
+/my_product           emmc    /dev/block/bootdevice/by-name/my_product             flags=display="my_product";flashimg;backup=1
+/my_region           emmc    /dev/block/bootdevice/by-name/my_region             flags=display="my_region";flashimg;backup=1
+/my_stock           emmc    /dev/block/bootdevice/by-name/my_stock             flags=display="my_stock";flashimg;backup=1
+
+/metadata           emmc    /dev/block/bootdevice/by-name/metadata              flags=display="metadata";flashimg;backup=1
+/engineering_cdt           emmc    /dev/block/bootdevice/by-name/engineering_cdt             flags=display="engineering_cdt";flashimg;backup=1
+/splash           emmc    /dev/block/bootdevice/by-name/splash             flags=display="splash";flashimg;backup=1
+/cdt_reserve2            emmc    /dev/block/bootdevice/by-name/reserve2              flags=display="reserve2 ";flashimg;backup=1
+/cdt_oplusreserve2            emmc    /dev/block/bootdevice/by-name/oplusreserve2              flags=display="oplusreserve2 ";flashimg;backup=1

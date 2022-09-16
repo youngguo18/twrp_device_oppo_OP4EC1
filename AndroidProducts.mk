@@ -17,6 +17,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_bitra.mk
+    $(LOCAL_DIR)/twrp_OP4EC1.mk
 
-COMMON_LUNCH_CHOICES := twrp_bitra-eng
+COMMON_LUNCH_CHOICES := twrp_OP4EC1-eng

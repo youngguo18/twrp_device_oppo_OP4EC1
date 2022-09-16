@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/bitra
+DEVICE_PATH := device/oppo/OP4EC1
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -45,7 +45,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RE5473,RE879AL1,RMX3370,bitra
+TARGET_OTA_ASSERT_DEVICE := OP4EC1,OP4F7FL1
 
 # Bootloader
 PRODUCT_PLATFORM := kona
@@ -111,7 +111,7 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
-BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_BOOTIMAGE_PARTITION_SIZE := 167772160
 
 # Dynamic Partition
 BOARD_SUPER_PARTITION_SIZE := 10200547328
@@ -148,7 +148,7 @@ TW_USE_TOOLBOX := true
 TW_EXTRA_LANGUAGES := true
 TARGET_USES_MKE2FS := true
 TW_OZIP_DECRYPT_KEY := 0000
-TW_INCLUDE_LOGICAL := my_product my_engineering common_preload special_preload
+TW_INCLUDE_LOGICAL := my_bigball my_carrier my_company my_custom my_engineering my_heytap my_manifest my_preload my_product my_region my_stock
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_NO_HAPTICS := true

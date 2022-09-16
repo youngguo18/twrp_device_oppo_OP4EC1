@@ -15,9 +15,9 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := bitra
+PRODUCT_RELEASE_NAME := OP4EC1
 
-$(call inherit-product, device/realme/bitra/device.mk)
+$(call inherit-product, device/oppo/OP4EC1/device.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -28,11 +28,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := bitra
-PRODUCT_NAME := twrp_bitra
-PRODUCT_BRAND := Realme
-PRODUCT_MODEL := GT Neo 2
-PRODUCT_MANUFACTURER := Realme
+PRODUCT_DEVICE := OP4EC1
+PRODUCT_NAME := twrp_OP4EC1
+PRODUCT_BRAND := OPPO
+PRODUCT_MODEL := Reno6 pro + 5G
+PRODUCT_MANUFACTURER := OPPO
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \

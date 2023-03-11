@@ -46,6 +46,7 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    write /sys/class/power_supply/usb/otg_switch 1
 
 #ifdef OPLUS_FEATURE_OTAPACKAGE_UPDATER
 #Shuangquan.du@PSW.AD.Recovery.0, 2020/08/17, Add for otg flash
@@ -70,15 +71,9 @@ on post-fs-data
     mkdir /data/vendor_de/0/cryptoeng 0770 system system
     setprop ro.separate.soft ${ro.boot.prjname}
 
-#service health-hal-2-1 /system/bin/android.hardware.health@2.1-service
-#    class hal charger
-#    user root
-#    group root
-#    capabilities WAKE_ALARM
-#    file /dev/kmsg w
-
-#on boot
-#    start health-hal-2-1
+on boot
+    start health-hal-2-1
+    setprop sys.usb.config adb
 
 service hal_cryptoeng_oplus /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
     user root
